@@ -5,3 +5,6 @@ package/
 .venv/
 
 __pycache__
+
+
+data/
