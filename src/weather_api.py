@@ -37,7 +37,7 @@ class GetApi:
             raise
         else:
             logger.info(f"Process done for {self.__class__}")
-            return req.json()
+            return json.dumps(req.json())
 
 
 if __name__=="__main__":
