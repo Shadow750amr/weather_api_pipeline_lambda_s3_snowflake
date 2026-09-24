@@ -4,8 +4,6 @@ import json
 import boto3
 
 logging.basicConfig(
-    filename='app.log',
-    filemode='a',
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -25,7 +23,6 @@ class GetApi:
     
     def __init__(self,*,url,params):
         self.url = url
-
         self.params = params
         logger.info("Class initialized")
     def connection(self):
@@ -37,7 +34,7 @@ class GetApi:
             raise
         else:
             logger.info(f"Process done for {self.__class__}")
-            return json.dumps(req.json())
+            return req.text.encode('utf-8')
 
 
 if __name__=="__main__":

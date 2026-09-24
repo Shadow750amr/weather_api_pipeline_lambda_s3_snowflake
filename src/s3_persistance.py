@@ -24,15 +24,3 @@ class S3Persistance:
             logger.error(f"Failed to upload {destination_key} to S3: {e}")
             raise
 
-
-if __name__=="__main__":
-    data = {
-    "nombre": "Ana",
-    "edad": 28,
-    "habilidades": ["Python", "SQL", "GCP"],
-    "activo": True}
-
-    json_str = json.dumps(data, indent=2)
-
-    ini = S3Persistance("weather_api_pipeline")
-    ini.upload_file(json_str,"data.json")
