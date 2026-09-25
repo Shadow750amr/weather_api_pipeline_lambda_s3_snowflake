@@ -25,3 +25,9 @@ To clon this repo just run the following steps:
 2. Run docker compose up -d
 3. Make sure everything is working properly
 
+
+
+## Next steps and possible new features
+ ###
+1. Add snowflake integration and configure snowpipe to ingest data from s3 bucket(VARIANT external stage).
+2. Leverage duckdb tranformation power to pre-transform data (compaction job) once landed in the bucket to generate parquet-based files (medallion schema and datalakehouse approach?)
